@@ -76,18 +76,6 @@ describe('PatientService', () => {
     req.flush(updatedPatient);
   });
 
-  // it('should delete a patient', () => {
-  //   const patientId = 1;
-
-  //   service.deletePatient(patientId).subscribe((response) => {
-  //     expect(response).toEqual('Deletion canceled');
-  //   });
-
-  //   const req = httpTestingController.expectOne(`${apiUrl}/${patientId}`);
-  //   expect(req.request.method).toEqual('DELETE');
-  //   req.flush(null);
-  // });
-
   afterEach(() => {
     httpTestingController.verify();
   });
