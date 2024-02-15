@@ -18,7 +18,6 @@ import { SamplesComponent } from './samples/samples.component';
 import { AnalyseComponent } from './analyse/analyse.component';
 import { AnalyseMesuresComponent } from './analyse-mesures/analyse-mesures.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

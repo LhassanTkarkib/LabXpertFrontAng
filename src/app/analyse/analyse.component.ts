@@ -14,7 +14,14 @@ export class AnalyseComponent implements OnInit {
   showUpdateForm: boolean = false;
 
   showAddForm: boolean = false;  // Add this line
-  newAnalyse: any = {};  // Add this line
+  newAnalyse: any = {
+    sousAnalyses: [
+      {
+        valeur: null,
+        sousAnalyseMesuresId: null
+      }
+    ]
+  };
   constructor(private analyseService: AnalyseService) { }
 
   ngOnInit(): void {

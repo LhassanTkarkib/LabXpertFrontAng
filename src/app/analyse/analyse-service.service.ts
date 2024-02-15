@@ -31,3 +31,6 @@ export class AnalyseService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }
+
+export class AnalyseServiceService {
+}
