@@ -7,7 +7,7 @@ import { UsersComponent } from './users/users.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardCounterComponent } from './dashboard-counter/dashboard-counter.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ModalComponent } from './modal/modal.component';
 import { ReagentsComponent } from './reagents/reagents.component';
@@ -17,6 +17,9 @@ import {ListePatientsComponent} from "./liste-patients/liste-patients.component"
 import { SamplesComponent } from './samples/samples.component';
 import { AnalyseComponent } from './analyse/analyse.component';
 import { AnalyseMesuresComponent } from './analyse-mesures/analyse-mesures.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import {AuthInterceptorService} from "./security/auth-interceptor.service";
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { AnalyseMesuresComponent } from './analyse-mesures/analyse-mesures.compo
     ListePatientsComponent,
     SamplesComponent,
     AnalyseComponent,
-    AnalyseMesuresComponent
+    AnalyseMesuresComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,11 @@ import { AnalyseMesuresComponent } from './analyse-mesures/analyse-mesures.compo
     CommonModule
 
   ],
-  providers: [PatientService],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
+    PatientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

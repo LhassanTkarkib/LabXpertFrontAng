@@ -1,11 +1,13 @@
-<app-nav-bar></app-nav-bar>
-<div id="layoutSidenav">
+<app-login *ngIf="!authService.isLoggedIn(); else loggedIn"></app-login>
 
-  <app-sidebar></app-sidebar>
-  <div id="layoutSidenav_content">
-    <main>
-      <router-outlet></router-outlet>
-    </main>
+<ng-template #loggedIn>
+  <app-nav-bar></app-nav-bar>
+  <div id="layoutSidenav">
+    <app-sidebar></app-sidebar>
+    <div id="layoutSidenav_content">
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </div>
   </div>
-</div>
-
+</ng-template>

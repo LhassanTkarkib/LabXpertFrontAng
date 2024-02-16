@@ -53,10 +53,10 @@ export class UsersComponent implements OnInit {
       this.showUpdateForm = true;
       this.selectedUser = user;
       this.updateUserForm.patchValue({
-        nomUtilisateur: user.nomUtilisateur,
+        nomUtilisateur: user.username,
         email: user.email,
         password: '',
-        roleDutilisateur: user.roleDutilisateur,
+        roleDutilisateur: user.role,
         InformationsPersonalises: user.InformationsPersonalises,
       });
     } else {
