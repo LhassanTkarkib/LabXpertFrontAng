@@ -9595,6 +9595,15 @@
         "hash": "sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg=="
       }
     },
+    "npm:jwt-decode": {
+      "type": "npm",
+      "name": "npm:jwt-decode",
+      "data": {
+        "version": "4.0.0",
+        "packageName": "jwt-decode",
+        "hash": "sha512-+KJGIyHgkGuIq3IEBNftfhW/LfWhXUIY6OmyVWjliu5KH1y0fw7VQ8YndE2O4qZdMSd9SqbnC8GOcZEy0Om7sA=="
+      }
+    },
     "npm:karma": {
       "type": "npm",
       "name": "npm:karma",
@@ -12694,6 +12703,11 @@
       {
         "source": "LabExpertFront",
         "target": "npm:jquery",
+        "type": "static"
+      },
+      {
+        "source": "LabExpertFront",
+        "target": "npm:jwt-decode",
         "type": "static"
       },
       {

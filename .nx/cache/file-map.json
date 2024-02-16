@@ -12,8 +12,10 @@
     "@angular/router": "^14.0.0",
     "@nrwl/angular": "^17.2.8",
     "@popperjs/core": "^2.11.8",
+    "@types/jwt-decode": "^3.1.0",
     "bootstrap": "^5.3.2",
     "jquery": "^3.7.1",
+    "jwt-decode": "^4.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4",
@@ -120,6 +122,7 @@
             "npm:@popperjs/core",
             "npm:bootstrap",
             "npm:jquery",
+            "npm:jwt-decode",
             "npm:rxjs",
             "npm:tslib",
             "npm:zone.js",
@@ -540,7 +543,8 @@
             "npm:@angular/core",
             "npm:@angular/common",
             "npm:rxjs",
-            "npm:@angular/router"
+            "npm:@angular/router",
+            "npm:jwt-decode"
           ]
         },
         {

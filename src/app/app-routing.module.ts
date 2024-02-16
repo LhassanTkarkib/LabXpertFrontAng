@@ -8,10 +8,11 @@ import { SamplesComponent } from './samples/samples.component';
 import {AnalyseMesuresComponent} from "./analyse-mesures/analyse-mesures.component";
 import {AnalyseComponent} from "./analyse/analyse.component";
 import {LoginComponent} from "./login/login.component";
+import {RoleGuardService} from "./security/role-guard.service";
 
 const routes: Routes = [
 
-  { path: 'users', component: UsersComponent },
+    { path: 'users', component: UsersComponent, canActivate: [RoleGuardService], data: {expectedRole: "ADMIN"} },
   { path: 'dashboard', component: DashboardCounterComponent },
   {path:"reagents",component:ReagentsComponent},
   { path: '', component: DashboardCounterComponent },

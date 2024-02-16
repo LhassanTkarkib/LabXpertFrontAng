@@ -6,6 +6,7 @@ import { tap } from 'rxjs/operators';
 import { JwtService } from './jwt.service';
 import {environment} from "../../environments/environment";
 import {Router} from "@angular/router";
+import {jwtDecode } from 'jwt-decode';
 
 interface LoginResponse {
   access_token: string;
@@ -18,7 +19,6 @@ interface LoginResponse {
 export class AuthService {
   private apiUrl = environment.apiBaseUrl;
 
-
   constructor(private http: HttpClient, private jwtService: JwtService, private router: Router) { }
 
   login(credentials: any): Observable<LoginResponse> {
@@ -28,11 +28,22 @@ export class AuthService {
         this.jwtService.saveRefreshToken(response.refresh_token);
       }));
   }
-// auth.service.ts
+
+  getUserIdFromToken(): number | null {
+    const token = this.jwtService.getToken();
+    if (!token) {
+      return null;
+    }
+    const decodedToken = jwtDecode(token);
+    const userId = (decodedToken as any).userId;
+    return userId;
+  }
+
   logout() {
     sessionStorage.clear();
     this.router.navigate(['/login']);
   }
+
   isLoggedIn(): boolean {
     return this.jwtService.getToken() !== null;
   }

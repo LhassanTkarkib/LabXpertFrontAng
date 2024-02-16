@@ -11,6 +11,7 @@ export interface Token {
 }
 
 export interface User {
+  roleDutilisateur: RoleDutilisateur;
   utilisateurId: number;
   username: string;
   email: string;
